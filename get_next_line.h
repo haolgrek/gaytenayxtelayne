@@ -6,7 +6,7 @@
 /*   By: rluder <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/09 17:11:33 by rluder            #+#    #+#             */
-/*   Updated: 2016/01/18 17:09:53 by rluder           ###   ########.fr       */
+/*   Updated: 2016/01/18 18:58:25 by rluder           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@
 
 typedef struct	s_file
 {
-	char	*data;
-	int		fd;
+	char		*data;
+	int			fd;
 }				t_file;
 
-int			get_buff(int fd, char **data);
-int			get_next_line(const int fd, char **line);
+int				get_buff(int fd, char **data);
+int				get_next_line(const int fd, char **line);
 #endif

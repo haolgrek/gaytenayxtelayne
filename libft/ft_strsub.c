@@ -6,7 +6,7 @@
 /*   By: rluder <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/01 15:25:16 by rluder            #+#    #+#             */
-/*   Updated: 2016/01/18 18:28:17 by rluder           ###   ########.fr       */
+/*   Updated: 2016/01/18 18:57:42 by rluder           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,3 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	dst[i] = '\0';
 	return (dst);
 }
-
