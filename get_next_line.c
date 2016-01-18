@@ -6,7 +6,7 @@
 /*   By: rluder <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/08 15:57:08 by rluder            #+#    #+#             */
-/*   Updated: 2016/01/14 21:15:21 by rluder           ###   ########.fr       */
+/*   Updated: 2016/01/18 17:29:29 by rluder           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int			get_buff(int fd, char **data)
 	while (ft_strchr(buf, '\n') == NULL)
 	{
 		if ((ret2 = read(fd, buf, BUFF_SIZE)) <= 0)
-			return (-1);
+			return (ret2);
 		buf[ret2] = '\0';
 		if ((temp2 = ft_strjoin(*data, buf)) == NULL)
 			return (-1);
@@ -32,7 +32,7 @@ int			get_buff(int fd, char **data)
 	return (1);
 }
 
-int			get_next_line(int const fd, char **line)
+int			get_next_line(const int fd, char **line)
 {
 	char			*temp;
 	char			*ptr;
@@ -45,7 +45,7 @@ int			get_next_line(int const fd, char **line)
 		ft_memdel((void**)&file.data);
 	}
 	if ((ret = get_buff(fd, &file.data)) == -1)
-		return (-1);
+		return (ret);
 	if (file.data == NULL)
 		return (0);
 	if (ft_strlen(file.data) == 0)
@@ -56,21 +56,4 @@ int			get_next_line(int const fd, char **line)
 	ft_memdel((void**)&file.data);
 	file.data = temp;
 	return (1);
-}
-
-int main(int argc, const char *argv[])
-{
-	char	**line;
-	int		fd;
-
-	fd = open(argv[1], O_RDONLY);
-	get_next_line(fd, line);
-	printf("%s", *line);
-//	get_next_line(fd, line);
-//	get_next_line(fd, line);
-	//	get_next_line(fd, line);
-	//	get_next_line(fd, line);
-	//	get_next_line(fd, line);
-	//	get_next_line(fd, line);
-	return (0);
 }

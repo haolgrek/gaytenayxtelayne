@@ -6,7 +6,7 @@
 /*   By: rluder <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/25 18:27:25 by rluder            #+#    #+#             */
-/*   Updated: 2015/12/04 16:14:33 by rluder           ###   ########.fr       */
+/*   Updated: 2016/01/18 18:21:36 by rluder           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,14 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	unsigned char	*a;
+	size_t	i;
+	char	*str;
 
-	a = s;
-	while (n-- > 0)
+	i = 0;
+	str = (char*)s;
+	while (i < n)
 	{
-		*a = '\0';
-		a++;
+		str[i] = 0;
+		i++;
 	}
 }

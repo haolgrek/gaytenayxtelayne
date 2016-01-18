@@ -6,7 +6,7 @@
 /*   By: rluder <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/26 14:08:23 by rluder            #+#    #+#             */
-/*   Updated: 2015/12/02 17:16:12 by rluder           ###   ########.fr       */
+/*   Updated: 2016/01/18 16:44:46 by rluder           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,5 +68,7 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char const *s, int fd);
 void	ft_putendl_fd(char const *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+
+char	*ft_strndup(const char *s1, size_t n);
 
 #endif

@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strndup.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rluder <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/24 15:24:09 by rluder            #+#    #+#             */
-/*   Updated: 2016/01/18 18:39:04 by rluder           ###   ########.fr       */
+/*   Created: 2016/01/18 13:00:37 by rluder            #+#    #+#             */
+/*   Updated: 2016/01/18 16:57:26 by rluder           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
+#include <stdlib.h>
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strndup(const char *s1, size_t n)
 {
-	int	i;
+	char	*s2;
+	char	*tmp;
+	size_t	size;
 
-	i = 0;
-	while (s[i] != '\0' && s[i] != c)
-		i++;
-	if (s[i] == c)
-		return ((char*)&s[i]);
-	return (0);
+	size = (n < ft_strlen(s1) + 1) ? n : ft_strlen(s1);
+	if ((s2 = ft_memalloc(size + 1)) == NULL)
+		return (NULL);
+	tmp = s2;
+	while (*s1 != '\0' && n > 0)
+	{
+		*s2++ = *s1++;
+		n--;
+	}
+	*s2 = '\0';
+	return (tmp);
 }
